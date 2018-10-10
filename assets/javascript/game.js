@@ -12,20 +12,17 @@ $(document).ready(function() {
 	
 	$("body").on("click", ".start-button", function(event){
 		event.preventDefault();  
-		clickSound.play();
 		generateHTML();
-	
 		timerWrapper();
 	
 	}); // Closes start-button click
 	
 	$("body").on("click", ".answer", function(event){
 		//answeredQuestion = true;
-		clickSound.play();
+		
 		selectedAnswer = $(this).text();
 		if(selectedAnswer === correctAnswers[questionCounter]) {
 			console.log("correct");
-	
 			clearInterval(theClock);
 			generateWin();
 		}
@@ -36,8 +33,7 @@ $(document).ready(function() {
 		}
 	}); // Close .answer click
 	
-	$("body").on("click", ".reset-button", function(event){
-		clickSound.play();
+	$("body").on("click", ".reset-button", function(event){	
 		resetGame();
 	}); // Closes reset-button click
 	
@@ -47,7 +43,7 @@ $(document).ready(function() {
 		unansweredTally++;
 		gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" 
 					+ "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" 
-					+ "<img class='center-block img-wrong' src='img/x.png'>";
+					
 
 			$(".mainArea").html(gameHTML);
 			setTimeout(wait, 4000);  //  change to 4000 or other amount
@@ -67,7 +63,7 @@ $(document).ready(function() {
 		incorrectTally++;
 		gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" 
 					+ "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" 
-					+ "<img class='center-block img-wrong' src='img/x.png'>";
+					
 			$(".mainArea").html(gameHTML);
 			setTimeout(wait, 4000); //  change to 4000 or other amount
 	}
@@ -155,13 +151,13 @@ $(document).ready(function() {
 
 	var imageArray = [
 		"<img class='center-block img-right' src='./assets/images/jordan.jpg'>", 
-		"<img class='center-block img-right' src='./assets/images/yankees-logo.jpg'>", 
+		"<img class='center-block img-right' src='./assets/images/sanchez.jpg'>", 
 		"<img class='center-block img-right' src='./assets/images/tomlin.jpg'>", 
-		"<img class='center-block img-right' src='./assets/images/'>", 
-		"<img class='center-block img-right' src='./assets/images/'>", 
-		"<img class='center-block img-right' src='./assets/images/'>", 
-		"<img class='center-block img-right' src='./assets/images/'>", 
-		"<img class='center-block img-right' src='./assets/images/'>"];
+		"<img class='center-block img-right' src='./assets/images/klose.jpg'>", 
+		"<img class='center-block img-right' src='./assets/images/rose.jpg'>", 
+		"<img class='center-block img-right' src='./assets/images/serena.jpg'>", 
+		"<img class='center-block img-right' src='./assets/images/griffeys.jpg'>", 
+		"<img class='center-block img-right' src='./assets/images/jayz.jpg'>"];
 
 	var correctAnswers = [
 		"B. Michael Jordan", 
@@ -179,4 +175,3 @@ $(document).ready(function() {
 	var correctTally = 0;
 	var incorrectTally = 0;
 	var unansweredTally = 0;
-	var clickSound = new Audio("sound/button-click.mp3");

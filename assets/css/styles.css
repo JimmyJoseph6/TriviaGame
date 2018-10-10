@@ -1,8 +1,4 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-   .jumbotron {
+ .jumbotron {
 	box-sizing: border-box;
 	height: 600px;
 	background-color: rgba(0, 0, 0, 0);
@@ -30,14 +26,6 @@
 	padding-left: 14px;
 	background-color: white;
 	border-radius: 4px;
-  }
-  
-  .img-wrong {
-	margin-top: 40px;
-  }
-  
-  .first-answer {
-	margin-top: 40px;
   }
   
   .reset-button {
